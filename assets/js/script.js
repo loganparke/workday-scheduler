@@ -17,10 +17,12 @@ $(".saveBtn").on("click", function() {
 
     tasks[taskTime] = taskText;
 
-
     //update task array
     console.log(tasks);
     saveTasks();
+
+    var x = tasks[12];
+    console.log(x);
 });
 
 // save tasks to local storage
@@ -31,10 +33,42 @@ var saveTasks = function() {
 
 //load tasks from local storage
 var loadTasks = function() {
-    console.log(localStorage.length);
     var savedTasks = localStorage.getItem("tasks");
     savedTasks = JSON.parse(savedTasks);
     console.log(savedTasks);
+    
+    if (savedTasks){
+        if (savedTasks[9]){
+            document.getElementById("9text").textContent = savedTasks[9];
+        }
+        if (savedTasks[10]) {
+            console.log("yes");
+            document.getElementById("10text").textContent = savedTasks[10];
+        }
+        if (savedTasks[11]) {
+            console.log("yes");
+            document.getElementById("11text").textContent = savedTasks[11];
+        }
+        if (savedTasks[12]) {
+            console.log("yes");
+            document.getElementById("12text").textContent = savedTasks[12];
+        }
+        if (savedTasks[1]){
+            document.getElementById("1text").textContent = savedTasks[1];
+        }
+        if (savedTasks[2]){
+            document.getElementById("2text").textContent = savedTasks[2];
+        }
+        if (savedTasks[3]){
+            document.getElementById("3text").textContent = savedTasks[3];
+        }
+        if (savedTasks[4]){
+            document.getElementById("4text").textContent = savedTasks[4];
+        }
+        if (savedTasks[5]){
+            document.getElementById("5text").textContent = savedTasks[5];
+        }
+    }
 }
 loadTasks();
 
